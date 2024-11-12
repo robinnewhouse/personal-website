@@ -14,9 +14,9 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0 auto;
 }
 
 header {
@@ -39,7 +39,7 @@ h1 {
 }
 
 .section {
-    margin: 4rem 0;
+    margin: 2rem 0;
 }
 
 .section-title {
@@ -53,9 +53,22 @@ h1 {
 .bio {
     font-family: 'Lato', sans-serif;
     color: #777;
-    max-width: 800px;
     margin: 0 auto;
-    text-align: justify;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.picture {
+    width: 350px;
+    height: auto;
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin: auto;
+}
+
+.bio-text {
+    flex: 1;
 }
 
 a {
@@ -176,15 +189,14 @@ h1 {
 }
 
 .quote-container {
-    text-align: center; /* Center the quote */
-    margin: 2rem auto; /* Center the container and add vertical spacing */
-    max-width: 400px; /* Set a maximum width to prevent line breaks */
+    text-align: center;
+    margin: 1rem auto;
 }
 
 .quote {
     font-family: 'Lato', sans-serif;
     font-style: italic;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #555; /* Darker color for the quote */
     text-shadow: none; /* Remove the shadow */
 }
@@ -194,14 +206,26 @@ h1 {
     font-style: italic;
     font-size: 0.9rem; /* Smaller font size */
     color: #555; /* Same color as the quote */
-    text-align: right; /* Right-align the text */
+    text-align: center; /* Center-align the text */
     margin-top: -1rem; /* Add some space above the attribution */
+    margin-left: 22rem; /* Offset text from center by 20px */
 }
 
 .section-divider {
     border: none; /* Remove default border */
     border-top: 2px solid #ccc; /* Add a top border */
     width: 100%; /* Full width of the container */
-    max-width: 1200px; /* Match the container's max-width */
     margin: 2rem auto; /* Center it and add vertical spacing */
+}
+
+.bio-right {
+    flex-direction: row-reverse;
+}
+
+.emoji-picture {
+    font-size: 100px;  /* Adjust size as needed */
+    width: 200px;      /* Same width as your other pictures */
+    text-align: center;
+    flex-shrink: 0;    /* Prevent shrinking */
+    line-height: 1;    /* Better vertical alignment */
 }
