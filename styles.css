@@ -118,7 +118,7 @@ a {
 .hero {
     background-color: rgba(48,48,51,1);
     background-image: url('https://apod.nasa.gov/apod/image/0712/eaglefairy_hst.jpg');
-    background-position: 50% top;
+    background-position: center -150px;
     background-attachment: fixed;
     background-repeat: no-repeat;
     position: relative;
@@ -141,8 +141,8 @@ a {
 
 @media screen and (min-width: 1200px) {
     .hero {
-        background-size: contain;
-        background-position: center top;
+        background-size: 100%;
+        background-position: center -150px;
         background-origin: content-box;
     }
 }
