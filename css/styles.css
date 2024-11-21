@@ -5,6 +5,13 @@
     --link-color: #303033;
 }
 
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.75;
@@ -14,10 +21,12 @@ body {
     padding-top: 60px;
 }
 
+/* Container */
 .container {
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 auto;
+    padding: 0 20px;
 }
 
 header {
@@ -27,217 +36,14 @@ header {
     text-align: center;
 }
 
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.quote {
-    font-family: 'Lato', sans-serif;
-    font-style: italic;
-    color: #e1dfdb;
-}
-
-.section {
-    margin: 2rem 0;
-}
-
-.section-title {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.bio {
-    font-family: 'Lato', sans-serif;
-    color: #777;
-    margin: 0 auto;
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-}
-
-.picture {
-    width: 350px;
-    height: auto;
-    border-radius: 5px;
-    flex-shrink: 0;
-    margin: auto;
-}
-
-.bio-text {
-    flex: 1;
-}
-
-a {
-    color: var(--link-color);
-    text-decoration: underline;
-}
-
-.contact {
-    background-color: var(--accent-color);
-    color: #fff;
-    padding: 3rem 0;
-    text-align: center;
-}
-
-.contact-list {
-    list-style: none;
-    padding: 0;
-}
-
-.contact-list a {
-    color: #fff;
-}
-
-.map {
-    width: 100%;
-    height: 400px;
-    border: none;
-}
-
-.footer {
-    font-size: 0.9rem;
-    color: #777;
-    text-align: left;
-    padding: 2rem;
-    background-color: #292323; /* Light gray background */
-    padding: 20px 0;
-}
-
-.footer-columns {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-.footer-column {
-    flex: 1;
-    margin: 0 40px;
-}
-.map {
-    width: 100%;
-    height: 200px;
-}
-.contact-list {
-    list-style-type: none;
-    padding: 0;
-}
-.contact-list li {
-    margin-bottom: 10px;
-}
-
-.hero {
-    background-color: rgba(48,48,51,1);
-    background-image: url('https://apod.nasa.gov/apod/image/0712/eaglefairy_hst.jpg');
-    background-position: center -150px;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40vh;
-    padding: 0;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    text-align: center;
-}
-
-@media screen and (min-width: 1200px) {
-    .hero {
-        background-size: 100%;
-        background-position: center -150px;
-        background-origin: content-box;
-    }
-}
-
-main {
-    position: relative;
-    background: white;
-    z-index: 2;
-}
-
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.quote {
-    font-family: 'Lato', sans-serif;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: #e1dfdb;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-.hero-content h1 {
-    border: 2px solid white; /* White border around the text */
-    color: white; /* Text color */
-    padding: 10px 90px; /* Padding inside the border */
-    display: inline-block; /* Ensures the border fits the text */
-}
-
-.quote-container {
-    text-align: center;
-    margin: 1rem auto;
-}
-
-.quote {
-    font-family: 'Lato', sans-serif;
-    font-style: italic;
-    font-size: 1.4rem;
-    color: #555; /* Darker color for the quote */
-    text-shadow: none; /* Remove the shadow */
-}
-
-.quote-attribution {
-    font-family: 'Lato', sans-serif;
-    font-style: italic;
-    font-size: 0.9rem; /* Smaller font size */
-    color: #555; /* Same color as the quote */
-    text-align: center; /* Center-align the text */
-    margin-top: -1rem; /* Add some space above the attribution */
-    margin-left: 22rem; /* Offset text from center by 20px */
-}
-
-.section-divider {
-    border: none; /* Remove default border */
-    border-top: 2px solid #ccc; /* Add a top border */
-    width: 100%; /* Full width of the container */
-    margin: 2rem auto; /* Center it and add vertical spacing */
-}
-
-.bio-right {
-    flex-direction: row-reverse;
-}
-
-.emoji-picture {
-    font-size: 100px;  /* Adjust size as needed */
-    width: 200px;      /* Same width as your other pictures */
-    text-align: center;
-    flex-shrink: 0;    /* Prevent shrinking */
-    line-height: 1;    /* Better vertical alignment */
-}
-
+/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     background-color: black;
-    padding: 1rem 2rem;
+    padding: 1.25rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -259,7 +65,7 @@ h1 {
 }
 
 .navbar-menu li {
-    margin-left: 2rem;
+    margin-left: 2.5rem;
 }
 
 .navbar-menu a {
@@ -271,4 +77,235 @@ h1 {
 
 .navbar-menu a:hover {
     color: #ccc;
+}
+
+
+.hero {
+    background-color: rgba(48,48,51,1);
+    background-image: url('https://apod.nasa.gov/apod/image/0712/eaglefairy_hst.jpg');
+    background-position: center -150px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38vh;
+    padding: 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    border: 2px solid white; /* White border around the text */
+}
+
+@media screen and (min-width: 1200px) {
+    .hero {
+        background-size: 100%;
+        background-position: center -150px;
+        background-origin: content-box;
+    }
+}
+
+/* Quote */
+.quote-container {
+    text-align: center;
+    padding: 2rem 20px 1rem;
+}
+
+.quote {
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #555;
+    text-shadow: none;
+}
+
+.quote-attribution {
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    margin-top: -1rem;
+    position: relative;
+    left: 10%;
+}
+
+/* Bio sections */
+.section {
+    padding: .5rem 0 .5rem;
+}
+
+.bio {
+    font-family: 'Lato', sans-serif;
+    color: #777;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.bio-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 0 2rem;
+    max-width: 65ch;
+}
+
+.picture {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.emoji-picture {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    flex-shrink: 0;
+    line-height: 1;
+    font-size: 150px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.section-divider {
+    border: none;
+    border-top: 2px solid #ccc;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+/* Footer */
+.footer {
+    background: #292323;
+    padding: 2rem 0;
+    color: #777;
+}
+
+.footer-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 40px;
+}
+
+.footer .section-title {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer a {
+    color: #fff;
+}
+
+.contact-list {
+    list-style-position: inside;
+    margin-left: 1rem;
+    color: #fff;
+}
+
+.contact-list li {
+    margin-bottom: 10px;
+}
+
+.map {
+    width: 100%;
+    height: 200px;
+    border: none;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bio {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .footer-columns {
+        flex-direction: row;
+    }
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: white;
+    padding: 10px 90px;
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    .quote-attribution {
+        left: 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .quote-attribution {
+        left: 0;
+    }
+}
+
+p {
+    margin-bottom: 1.75rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.bio-text p {
+    margin-bottom: 1.25rem;
+}
+
+.bio-text p:last-child {
+    margin-bottom: 0;
 }
