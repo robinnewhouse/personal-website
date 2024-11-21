@@ -11,12 +11,13 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Open+Sans:400,400italic,600,600italic,700,700italic|Lato:400,400i,700|Raleway:500,700&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" id="theme-style">
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-brand">Robin Newhouse</div>
         <ul class="navbar-menu">
+            <li><button id="style-switcher" class="style-switch-btn">Switch Style</button></li>
             <li><a href="#home">Home</a></li>
             <li><a href="#resume">Resume</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -131,6 +132,16 @@
             const hero = document.querySelector('.hero');
             const scrollPosition = window.scrollY;
             hero.style.backgroundPositionY = -(scrollPosition * 0.5) -150 + 'px';
+        });
+
+        document.getElementById('style-switcher').addEventListener('click', function() {
+            const styleSheet = document.getElementById('theme-style');
+            const currentStyle = styleSheet.getAttribute('href');
+            if (currentStyle === 'css/styles.css') {
+                styleSheet.setAttribute('href', 'css/old-styles.css');
+            } else {
+                styleSheet.setAttribute('href', 'css/styles.css');
+            }
         });
     </script>
 </body>
