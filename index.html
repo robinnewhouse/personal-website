@@ -12,11 +12,23 @@
         rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css" id="theme-style">
+    <!-- Prevent wider-than-window viewport -->
+    <script>
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+            document.body.style.width = '100%';
+        });
+    </script>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="navbar-brand">Robin Newhouse</div>
+        <button class="navbar-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul class="navbar-menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#resume">Resume</a></li>
@@ -59,7 +71,7 @@
             <div class="bio bio-right">
                 <img src="images/content/standard-model.jpg" alt="ATLAS Detector at CERN" class="picture">
                 <div class="bio-text">
-                    <h2 class="section-title">Education and interests</h2>
+                    <h2 class="section-title">Education</h2>
                     <p>I received a BSc in Astronomy with a minor in Computer Science from the University of British
                         Columbia. Throughout my degree, I worked as an undergraduate researcher at the <a
                             href="https://spl.cs.ubc.ca/">UBC Software Practices Lab</a>, The <a
@@ -149,6 +161,12 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.querySelector('.navbar-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar-menu').classList.toggle('active');
+        });
+    </script>
 
 </body>
 

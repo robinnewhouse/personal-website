@@ -10,6 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 body {
@@ -26,7 +27,8 @@ body {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
 
 header {
@@ -43,7 +45,7 @@ header {
     left: 0;
     right: 0;
     background-color: black;
-    padding: 1.25rem 2.5rem;
+    padding: 1.25rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,6 +81,26 @@ header {
     color: #ccc;
 }
 
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.navbar-toggle span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
 
 .hero {
     background-color: rgba(48,48,51,1);
@@ -167,7 +189,7 @@ header {
 .bio-text {
     flex: 1;
     min-width: 300px;
-    padding: 0 2rem;
+    padding: 0 1rem;
     max-width: 65ch;
 }
 
@@ -219,7 +241,7 @@ header {
 
 .footer-column {
     flex: 1;
-    padding: 0 40px;
+    padding: 0 1rem;
 }
 
 .footer .section-title {
@@ -280,6 +302,9 @@ a {
     color: white;
     padding: 10px 90px;
     display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
 }
 
 @media screen and (max-width: 768px) {
@@ -308,4 +333,66 @@ p:last-child {
 
 .bio-text p:last-child {
     margin-bottom: 0;
+}
+
+/* Update the media query for mobile */
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: black;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        margin: 0;
+        padding: 1rem 0;
+    }
+
+    .navbar-menu a {
+        font-size: 1.2rem;
+    }
+}
+
+/* Add responsive adjustments */
+@media screen and (max-width: 768px) {
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+        padding: 10px 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+        padding: 10px;
+        width: auto;
+    }
+    
+    .hero {
+        height: 30vh; /* Optional: slightly shorter hero section on mobile */
+    }
+}
+
+/* Add/update these styles */
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%;
 }
