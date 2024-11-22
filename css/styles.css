@@ -2,6 +2,7 @@
     --text-color: #333;
     --bg-color: #fff;
     --accent-color: #303033;
+    --navbar-color: black;
     --link-color: #303033;
 }
 
@@ -19,7 +20,7 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 0;
-    padding-top: 60px;
+    padding-top: 70px;
 }
 
 /* Container */
@@ -27,7 +28,7 @@ body {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 2rem 1rem;
     box-sizing: border-box;
 }
 
@@ -44,12 +45,14 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background-color: black;
-    padding: 1.25rem 1rem;
+    background-color: var(--navbar-color);
+    height: 70px;
+    padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
@@ -57,6 +60,7 @@ header {
     color: white;
     font-size: 1.5rem;
     font-weight: 700;
+    text-decoration: none;
 }
 
 .navbar-menu {
@@ -73,12 +77,14 @@ header {
 .navbar-menu a {
     color: white;
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 .navbar-menu a:hover {
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .navbar-toggle {
@@ -173,7 +179,7 @@ header {
 
 /* Bio sections */
 .section {
-    padding: .5rem 0 .5rem;
+    padding: 2rem 0;
 }
 
 .bio {
@@ -228,15 +234,19 @@ header {
 
 /* Footer */
 .footer {
-    background: #292323;
+    background: var(--accent-color);
     padding: 2rem 0;
-    color: #777;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 4rem;
 }
 
 .footer-columns {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .footer-column {
@@ -245,13 +255,21 @@ header {
 }
 
 .footer .section-title {
-    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    color: white;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+    text-align: left;
 }
 
 .footer a {
-    color: #fff;
+    color: white;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .contact-list {
@@ -348,9 +366,10 @@ p:last-child {
         left: 0;
         right: 0;
         flex-direction: column;
-        background-color: black;
+        background-color: var(--accent-color);
         padding: 1rem 0;
         text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .navbar-menu.active {
@@ -364,6 +383,11 @@ p:last-child {
 
     .navbar-menu a {
         font-size: 1.2rem;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        padding: 0 1rem;
     }
 }
 
@@ -395,4 +419,36 @@ p:last-child {
 html, body {
     overflow-x: hidden; /* Prevent horizontal scroll */
     width: 100%;
+}
+
+.resume-container {
+    max-width: 210mm;  /* A4 width */
+    min-height: 297mm; /* A4 height */
+    margin: 0 auto;
+    padding: 20mm;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid red;
+}
+
+/* Ensure the YUI grid stays within the A4 boundaries */
+#doc2 {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+#inner {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent;
+}
+
+.resume-section {
+    margin-bottom: 2rem;
+}
+
+.resume-section h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
