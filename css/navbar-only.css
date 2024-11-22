@@ -21,17 +21,17 @@ body {
     left: 0;
     right: 0;
     background-color: var(--navbar-color);
-    height: 70px;
+    height: var(--navbar-height);
     padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-small);
 }
 
 .navbar-brand {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-secondary);
     color: white;
     font-size: 1.5rem;
     font-weight: 700;
@@ -52,10 +52,10 @@ body {
 .navbar-menu a {
     color: white;
     text-decoration: none;
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--font-tertiary);
     font-weight: 500;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
 }
 
 .navbar-menu a:hover {
@@ -114,4 +114,4 @@ body {
     .navbar-menu a {
         font-size: 1.2rem;
     }
-} 
+}

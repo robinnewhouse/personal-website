@@ -1,54 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Robin Newhouse - Resume</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Raleway:500,700&display=swap" rel="stylesheet">
-    <!-- YUI Grids CSS -->
-    <link href="https://yui-s.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" rel="stylesheet" type="text/css"/>
+
+    <!-- Load shared resources first -->
+    <link rel="stylesheet" href="css/shared-resources.css">
+
+    <!-- YUI Grids CSS (now local) -->
+    <link rel="stylesheet" href="css/vendor/reset-fonts-grids.css">
+
     <!-- Resume styles -->
     <link rel="stylesheet" href="css/srt-resume.css">
+
     <!-- Navbar styles -->
     <link rel="stylesheet" href="css/navbar-only.css">
-    <style>
-        #resume-container {
-            position: relative;
-            padding-top: 2rem; /* Add space between navbar and resume */
-        }
-    </style>
 </head>
-<body>
-    <div id="navbar-placeholder"></div>
-    
-    <!-- Resume content will be loaded here -->
-    <div id="resume-container"></div>
+
+<body class="resume-page">
+    <div id="navbar-placeholder">
+    </div>
+
+    <div id="resume-container">
+    </div>
 
     <script>
         // Load navbar
         fetch('components/navbar.html')
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
                 // Reattach navbar toggle listener
-                document.querySelector('.navbar-toggle')?.addEventListener('click', function() {
+                document.querySelector('.navbar-toggle')?.addEventListener('click', function () {
                     document.querySelector('.navbar-menu').classList.toggle('active');
                 });
+            })
+            .catch(error => {
+                console.error('Error loading navbar:', error);
+                document.getElementById('navbar-placeholder').innerHTML = `
+                    <nav class="navbar">
+                        <div class="navbar-brand">Robin Newhouse</div>
+                    </nav>
+                `;
             });
 
         // Load resume content
         fetch('srt-resume.html')
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
             .then(data => {
-                // Extract content between <body> tags using regex
-                const bodyContent = data.match(/<body[^>]*>([\s\S]*)<\/body>/i)[1];
-                document.getElementById('resume-container').innerHTML = bodyContent;
+                const bodyMatch = data.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+                if (!bodyMatch) {
+                    throw new Error('Could not extract body content');
+                }
+                document.getElementById('resume-container').innerHTML = bodyMatch[1];
             })
             .catch(error => {
                 console.error('Error loading resume content:', error);
-                document.getElementById('resume-container').innerHTML = '<p>Error loading resume content. Please try again later.</p>';
+                document.getElementById('resume-container').innerHTML = `
+                    <div class="error-message">
+                        <h2>Error loading resume content</h2>
+                        <p>Please try refreshing the page. If the problem persists, you can view my resume on 
+                        <a href="https://www.linkedin.com/in/robinnewhouse/">LinkedIn</a>.</p>
+                    </div>
+                `;
             });
     </script>
+
+    <style>
+
+        .error-message {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .error-message h2 {
+            color: var(--link-color);
+            margin-bottom: 1rem;
+        }
+    </style>
 </body>
+
 </html>

@@ -1,34 +1,9 @@
-:root {
-    --text-color: #333;
-    --bg-color: #fff;
-    --accent-color: #303033;
-    --navbar-color: black;
-    --link-color: #303033;
-}
-
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    max-width: 100%;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.75;
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    padding-top: 70px;
-}
-
 /* Container */
 .container {
     width: 100%;
-    max-width: 1000px;
+    max-width: var(--content-width);
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 0rem 1rem;
     box-sizing: border-box;
 }
 
@@ -39,77 +14,8 @@ header {
     text-align: center;
 }
 
-/* Navigation */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--navbar-color);
-    height: 70px;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-brand {
-    font-family: 'Playfair Display', serif;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.navbar-menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-menu li {
-    margin-left: 2.5rem;
-}
-
-.navbar-menu a {
-    color: white;
-    text-decoration: none;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.navbar-menu a:hover {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.navbar-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10;
-}
-
-.navbar-toggle span {
-    width: 100%;
-    height: 3px;
-    background: white;
-    border-radius: 10px;
-    transition: all 0.3s linear;
-}
-
 .hero {
-    background-color: rgba(48,48,51,1);
+    background-color: rgba(48, 48, 51, 1);
     background-image: url('https://apod.nasa.gov/apod/image/0712/eaglefairy_hst.jpg');
     background-position: center -150px;
     background-attachment: fixed;
@@ -140,7 +46,8 @@ header {
     margin: 0 auto;
     padding: 0 2rem;
     text-align: center;
-    border: 2px solid white; /* White border around the text */
+    border: 2px solid white;
+    /* White border around the text */
 }
 
 @media screen and (min-width: 1200px) {
@@ -148,6 +55,11 @@ header {
         background-size: 100%;
         background-position: center -150px;
         background-origin: content-box;
+    }
+
+    .bio {
+        flex-direction: row;
+        align-items: center;
     }
 }
 
@@ -179,7 +91,7 @@ header {
 
 /* Bio sections */
 .section {
-    padding: 2rem 0;
+    padding: var(--section-spacing) 0;
 }
 
 .bio {
@@ -226,10 +138,10 @@ header {
 }
 
 .section-divider {
-    border: none;
-    border-top: 2px solid #ccc;
-    width: 80%;
-    margin: 2rem auto;
+    margin: 1rem auto;
+    border: 0;
+    width: 90%;
+    border-top: 1.5px solid var(--border-color);
 }
 
 /* Footer */
@@ -242,9 +154,9 @@ header {
 
 .footer-columns {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 2rem;
-    max-width: 1200px;
+    max-width: var(--content-width);
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -288,21 +200,36 @@ header {
     border: none;
 }
 
-/* Desktop styles */
-@media (min-width: 768px) {
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+/* Tablet and below */
+@media screen and (max-width: 768px) {
+    .hero-content {
+        padding: 0 1rem;
     }
 
-    .bio {
-        flex-direction: row;
-        align-items: center;
+    .hero-content h1 {
+        font-size: 2.5rem;
+        padding: 10px 30px;
     }
 
-    .footer-columns {
-        flex-direction: row;
+    .quote-attribution {
+        left: 5%;
+    }
+}
+
+/* Mobile only */
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+        padding: 10px;
+        width: auto;
+    }
+
+    .hero {
+        height: 30vh;
+    }
+
+    .quote-attribution {
+        left: 0;
     }
 }
 
@@ -313,28 +240,16 @@ a {
 }
 
 .hero-content h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-secondary);
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: var(--shadow-medium);
     color: white;
     padding: 10px 90px;
     display: inline-block;
     max-width: 100%;
     box-sizing: border-box;
     word-wrap: break-word;
-}
-
-@media screen and (max-width: 768px) {
-    .quote-attribution {
-        left: 5%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .quote-attribution {
-        left: 0;
-    }
 }
 
 p {
@@ -347,48 +262,11 @@ p:last-child {
 
 .bio-text p {
     margin-bottom: 1.25rem;
+    text-align: justify;
 }
 
 .bio-text p:last-child {
     margin-bottom: 0;
-}
-
-/* Update the media query for mobile */
-@media (max-width: 768px) {
-    .navbar-toggle {
-        display: flex;
-    }
-
-    .navbar-menu {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background-color: var(--accent-color);
-        padding: 1rem 0;
-        text-align: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar-menu.active {
-        display: flex;
-    }
-
-    .navbar-menu li {
-        margin: 0;
-        padding: 1rem 0;
-    }
-
-    .navbar-menu a {
-        font-size: 1.2rem;
-    }
-
-    .footer-columns {
-        flex-direction: column;
-        padding: 0 1rem;
-    }
 }
 
 /* Add responsive adjustments */
@@ -396,7 +274,7 @@ p:last-child {
     .hero-content {
         padding: 0 1rem;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
         padding: 10px 30px;
@@ -409,21 +287,26 @@ p:last-child {
         padding: 10px;
         width: auto;
     }
-    
+
     .hero {
-        height: 30vh; /* Optional: slightly shorter hero section on mobile */
+        height: 30vh;
+        /* Optional: slightly shorter hero section on mobile */
     }
 }
 
 /* Add/update these styles */
-html, body {
-    overflow-x: hidden; /* Prevent horizontal scroll */
+html,
+body {
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
     width: 100%;
 }
 
 .resume-container {
-    max-width: 210mm;  /* A4 width */
-    min-height: 297mm; /* A4 height */
+    max-width: 210mm;
+    /* A4 width */
+    min-height: 297mm;
+    /* A4 height */
     margin: 0 auto;
     padding: 20mm;
     background-color: white;
@@ -451,4 +334,12 @@ html, body {
     border-bottom: 2px solid #eee;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+}
+
+/* Tablet and Mobile */
+@media screen and (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
 }
