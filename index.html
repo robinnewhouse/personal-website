@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/styles.css" id="theme-style">
     <!-- Prevent wider-than-window viewport -->
     <script>
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             window.scrollTo(0, 0);
             document.body.style.width = '100%';
         });
@@ -22,19 +22,7 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-brand">Robin Newhouse</div>
-        <button class="navbar-toggle" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <ul class="navbar-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
     <header class="hero">
         <div class="hero-content">
@@ -136,38 +124,26 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-columns">
-            <div class="footer-column">
-                <h2 class="section-title">Get in touch!</h2>
-                <ul class="contact-list" style="list-style-type: disc;">
-                    <li><a href="https://www.linkedin.com/in/robinnewhouse/">LinkedIn</a></li>
-                    <li><a href="https://twitter.com/robinnewhouse">Twitter</a></li>
-                    <li>Or let's grab a coffee if we're in the same city! ☕️</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h2 class="section-title">Where am I now?</h2>
-                <iframe class="map" src="https://maps.google.com/maps?q=Vancouver,BC,Canada&z=11&output=embed"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div class="footer-column" style="font-size: 0.7rem;">
-                <h2 class="section-title">Photo credits</h2>
-                <p><br>
-                    The Fairy of Eagle Nebula: <i>The Hubble Heritage Team, (STScI/AURA), ESA, NASA</i><br>
-                    Profile picture: <i>Paul Joseph - UBC Brand and Marketing</i><br>
-                    ATLAS detector: <i>Maximilien Brice - CERN</i></p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script>
-        document.querySelector('.navbar-toggle').addEventListener('click', function() {
-            document.querySelector('.navbar-menu').classList.toggle('active');
-        });
-    </script>
+        // Load header and footer
+        fetch('components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                // Reattach event listener for navbar toggle after loading
+                document.querySelector('.navbar-toggle')?.addEventListener('click', function() {
+                    document.querySelector('.navbar-menu').classList.toggle('active');
+                });
+            });
 
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>
