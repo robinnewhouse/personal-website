@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Robin Newhouse - Projects</title>
+
+    <!-- Load shared resources first -->
+    <link rel="stylesheet" href="css/shared-resources.css">
+    
+    <!-- Navbar styles -->
+    <link rel="stylesheet" href="css/navbar-only.css">
+
+    <!-- Projects styles -->
+    <link rel="stylesheet" href="css/projects.css">
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+    <div style="text-align: center; padding: 4rem 1rem;">
+        <h1 style="font-size: 3rem; margin-bottom: 1rem;">🚧 Under Construction 🚧</h1>
+        <p style="font-size: 1.5rem; color: #666;">
+            👷 Check back soon to see my projects. 🏗️
+            
+        </p>
+    </div>
+
+    <main class="projects-container">
+        <section class="projects-section">
+            <!-- <h2 class="section-title">Software</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/projects/project1.jpg" alt="Project 1" class="project-image">
+                    <h3 class="project-title">Project 1 Title</h3>
+                </div>
+            </div> -->
+        </section>
+
+        <section class="projects-section">
+            <!-- <h2 class="section-title">Academic</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/projects/academic1.jpg" alt="Academic Project 1" class="project-image">
+                    <h3 class="project-title">Academic Project 1 Title</h3>
+                </div>
+            </div> -->
+        </section>
+
+        <section class="projects-section">
+            <!-- <h2 class="section-title">Creative</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/projects/academic1.jpg" alt="Academic Project 1" class="project-image">
+                    <h3 class="project-title">Academic Project 1 Title</h3>
+                </div>
+            </div> -->
+        </section>
+    </main>
+
+    <script>
+        // Load navbar
+        fetch('components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                // Reattach event listener for navbar toggle
+                document.querySelector('.navbar-toggle')?.addEventListener('click', function () {
+                    document.querySelector('.navbar-menu').classList.toggle('active');
+                });
+            });
+    </script>
+</body>
+
+</html> 
