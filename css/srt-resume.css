@@ -181,7 +181,7 @@ a#pdf:hover {
     position: relative;
     margin-bottom: .5em;
     padding-bottom: 1em;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .job h4 {
@@ -228,7 +228,7 @@ a#pdf:hover {
 
 .location {
     font-style: italic;
-    color: #666666
+    color: var(--text-color-light);
 }
 
 .interest {
@@ -261,4 +261,35 @@ a#pdf:hover {
 
 .yui-gf div.first {
     width: 6.3%;
+}
+
+a#pdf:hover {
+    transition: background-color var(--transition-speed) ease;
+}
+
+/* Resume page specific styles */
+.resume-page {
+    padding-top: var(--navbar-height);
+    overflow-x: visible;
+    /* Allow horizontal scroll for resume content */
+}
+
+#resume-container {
+    position: relative;
+    padding-top: 2rem;
+    max-width: 210mm;
+    /* A4 width */
+    margin: 0 auto;
+}
+
+/* YUI Grid overrides */
+#doc2 {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+#inner {
+    padding: 5px 39px !important;
+    margin: 0 auto !important;
+    background: #F9F9F9;
 }

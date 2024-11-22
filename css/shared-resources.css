@@ -1,4 +1,71 @@
-/* Import shared fonts */
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Raleway:500,700&display=swap');
+/* Consolidate all font imports in one place */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:ital,wght@0,400;0,700;1,400&family=Raleway:wght@500;700&display=swap');
 
-/* Other shared resources */ 
+/* CSS Reset and Base Styles */
+:root {
+    /* Colors */
+    --text-color: #333;
+    --text-color-light: #666;
+    --bg-color: #fff;
+    --accent-color: #303033;
+    --navbar-color: black;
+    --link-color: #751414;
+    --border-color: #ccc;
+
+    /* Fonts */
+    --font-primary: 'Open Sans', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+    --font-tertiary: 'Raleway', sans-serif;
+    --font-body: 'Lato', sans-serif;
+
+    /* Spacing */
+    --navbar-height: 70px;
+    --section-spacing: 1rem;
+    --content-width: 1200px;
+
+    /* Shadows */
+    --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --transition-speed: 0.3s;
+
+    /* Breakpoints */
+    --mobile: 480px;
+    --tablet: 768px;
+    --desktop: 1200px;
+}
+
+/* Add standard media query mixins */
+@custom-media --mobile-only (max-width: 480px);
+@custom-media --tablet-and-below (max-width: 768px);
+@custom-media --desktop-and-up (min-width: 1200px);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+html,
+body {
+    width: 100%;
+}
+
+body:not(.resume-page) {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.75;
+    color: var(--text-color);
+    padding-top: 70px;
+}
+
+/* Shared link styles */
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+}

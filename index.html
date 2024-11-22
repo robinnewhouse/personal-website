@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Science does not know its debt to imagination. -R.W. Emerson">
     <title>Robin Newhouse</title>
-    <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Open+Sans:400,400italic,600,600italic,700,700italic|Lato:400,400i,700|Raleway:500,700&display=swap"
-        rel="stylesheet">
+    <!-- Shared Resources -->
+    <link rel="stylesheet" href="css/shared-resources.css">
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css" id="theme-style">
+    <!-- Navbar styles -->
+    <link rel="stylesheet" href="css/navbar-only.css">
     <!-- Prevent wider-than-window viewport -->
     <script>
         window.addEventListener('load', function () {
@@ -133,7 +133,7 @@
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
                 // Reattach event listener for navbar toggle after loading
-                document.querySelector('.navbar-toggle')?.addEventListener('click', function() {
+                document.querySelector('.navbar-toggle')?.addEventListener('click', function () {
                     document.querySelector('.navbar-menu').classList.toggle('active');
                 });
             });
