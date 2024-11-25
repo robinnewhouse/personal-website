@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/vendor/reset-fonts-grids.css">
 
     <!-- Resume styles -->
-    <link rel="stylesheet" href="css/srt-resume.css">
+    <link rel="stylesheet" href="css/resume-style.css">
 
     <!-- Navbar styles -->
     <link rel="stylesheet" href="css/navbar-only.css">
@@ -23,7 +23,12 @@
     <div id="navbar-placeholder">
     </div>
 
-    <div id="resume-container">
+    <div style="display: flex; gap: 20px; justify-content: center;">
+        <div style="height: 11in; width: 2px; background: red;"></div>
+        <div id="resume-container">
+            <div id="doc2" class="yui-t7">
+            </div>
+        </div>
     </div>
 
     <script>
@@ -52,7 +57,7 @@
             });
 
         // Load resume content
-        fetch('srt-resume.html')
+        fetch('resume-us.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
