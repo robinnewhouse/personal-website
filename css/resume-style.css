@@ -271,21 +271,19 @@ a#pdf:hover {
 .resume-page {
     padding-top: var(--navbar-height);
     overflow-x: visible;
-    /* Allow horizontal scroll for resume content */
 }
 
 #resume-container {
     position: relative;
     padding-top: 2rem;
-    max-width: 210mm;
-    /* A4 width */
     margin: 0 auto;
 }
 
 /* YUI Grid overrides */
 #doc2 {
-    width: 100% !important;
-    margin: 0 !important;
+    width: 73.076em !important;  /* YUI's original width */
+    min-width: 950px !important;
+    margin: 0 auto !important;
 }
 
 #inner {

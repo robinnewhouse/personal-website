@@ -58,6 +58,10 @@ body {
     transition: color var(--transition-speed) ease;
 }
 
+.navbar-menu a.active {
+    font-weight: 700;
+}
+
 .navbar-menu a:hover {
     color: rgba(255, 255, 255, 0.8);
 }
@@ -113,5 +117,29 @@ body {
 
     .navbar-menu a {
         font-size: 1.2rem;
+    }
+}
+
+/* Active state styling based on body class */
+.home-page .navbar-menu a[href="index.html"],
+.resume-page .navbar-menu a[href="resume.html"],
+.projects-page .navbar-menu a[href="projects.html"] {
+    font-weight: 700;
+}
+
+/* Hide elements when printing */
+@media print {
+
+    .navbar,
+    #navbar-placeholder,
+    #footer-placeholder {
+        display: none;
+    }
+
+    /* Reset the body padding that was used for navbar space */
+    body {
+        padding-top: 0;
+        margin-top: -120px;
+        background-color: white;
     }
 }
