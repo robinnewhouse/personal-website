@@ -199,8 +199,6 @@ a#pdf:hover {
     margin-bottom: -.5em
 }
 
-.skills-list {}
-
 .skills-list ul {
     margin: 0;
 }
@@ -287,7 +285,7 @@ a#pdf:hover {
 }
 
 #inner {
-    padding: 5px 39px !important;
-    margin: 0 auto !important;
-    background: #F9F9F9;
+    padding: 5px 39px;
+    margin: 0 auto;
+    background: #ffffff;
 }
