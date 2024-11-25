@@ -27,6 +27,7 @@ header {
     justify-content: center;
     height: 38vh;
     padding: 0;
+    max-height: 380px;
 }
 
 .hero::before {
