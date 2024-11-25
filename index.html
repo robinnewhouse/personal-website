@@ -127,6 +127,13 @@
     <div id="footer-placeholder"></div>
 
     <script>
+
+        window.addEventListener('scroll', function () {
+            const hero = document.querySelector('.hero');
+            const scrollPosition = window.scrollY;
+            hero.style.backgroundPositionY = -(scrollPosition * 0.5) - 150 + 'px';
+        });
+
         // Load header and footer
         fetch('components/navbar.html')
             .then(response => response.text())
