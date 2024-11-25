@@ -139,7 +139,7 @@ body {
     /* Reset the body padding that was used for navbar space */
     body {
         padding-top: 0;
-        margin-top: -120px;
+        margin-top: -80px;
         background-color: white;
     }
 }
