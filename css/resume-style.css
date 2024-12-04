@@ -153,7 +153,8 @@ p.enlarge span {
 
 .lev1 {
     list-style: disc inside;
-    padding-top: .4em
+    padding-top: .45em;
+    font-size: 101%;
 }
 
 .lev2 {
