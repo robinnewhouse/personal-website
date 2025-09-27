@@ -26,6 +26,9 @@
 
 .project-card {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .project-image {
@@ -85,6 +88,38 @@
     color: var(--text-color-light);
     font-size: 0.9rem;
     margin-top: 0.5rem;
+}
+
+.project-actions {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.github-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background-color: #24292e;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all var(--transition-speed);
+    font-family: var(--font-primary);
+}
+
+.github-button:hover {
+    background-color: #0366d6;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-medium);
+}
+
+.github-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5rem;
 }
 
 @media (max-width: var(--tablet)) {
