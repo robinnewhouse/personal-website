@@ -3,14 +3,28 @@
 
 /* CSS Reset and Base Styles */
 :root {
-    /* Colors */
-    --text-color: #333;
+    /* New Color Palette from Hero Background */
+    --wisteria: #B2A1D3;
+    --brown-sugar: #B17246;
+    --night: #090A09;
+    --ultra-violet: #574F8D;
+    --sepia: #5A320A;
+    
+    /* Updated Color Variables */
+    --text-color: #2c2c2c;
     --text-color-light: #666;
+    --text-color-muted: #8a8a8a;
     --bg-color: #fff;
-    --accent-color: #303033;
-    --navbar-color: black;
-    --link-color: #751414;
-    --border-color: #ccc;
+    --bg-color-light: #fafafa;
+    --accent-color: var(--ultra-violet);
+    --accent-color-light: var(--wisteria);
+    --navbar-color: var(--night);
+    --link-color: var(--brown-sugar);
+    --link-hover-color: var(--sepia);
+    --border-color: #e5e5e5;
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 20px rgba(87, 79, 141, 0.08);
+    --card-shadow-hover: 0 8px 30px rgba(87, 79, 141, 0.15);
 
     /* Fonts */
     --font-primary: 'Open Sans', sans-serif;
