@@ -9,6 +9,6 @@ aws s3 sync . s3://robinnewhouse-com \
   --exclude ".DS_Store"
 
 echo "Creating CloudFront invalidation to clear cache..."
-aws cloudfront create-invalidation --distribution-id EZIGKVDLQLO2E --paths "/*"
+aws cloudfront create-invalidation --distribution-id EZIGKVDLQLO2E --paths "/*" --no-cli-pager
 
 echo "Website deployed and cache cleared!"
