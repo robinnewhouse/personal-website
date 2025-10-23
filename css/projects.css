@@ -55,6 +55,7 @@
 .project-link {
     text-decoration: none;
     color: inherit;
+    border-bottom: none;
     display: block;
 }
 
@@ -103,6 +104,7 @@
     background-color: #24292e;
     color: white;
     text-decoration: none;
+    border-bottom: none;
     border-radius: 6px;
     font-size: 0.875rem;
     font-weight: 500;
