@@ -45,9 +45,41 @@ body {
 }
 
 .yui-gf {
-    margin-bottom: .7em;
-    padding: .7em;
+    margin-bottom: .5em;
+    padding: .5em 0;
     border-bottom: 1px solid #ccc;
+}
+
+.section-fullwidth {
+    margin-bottom: .5em;
+    padding: .5em 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.section-fullwidth.last,
+.section-fullwidth.no-border {
+    border-bottom: none;
+}
+
+.section-header {
+    font-size: 160%;
+    font-weight: bold;
+    margin-bottom: 0.4em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skills-dense {
+    line-height: 1.5;
+    margin-bottom: 0.3em;
+}
+
+.skills-dense strong {
+    font-weight: bold;
+}
+
+.leadership-compact {
+    line-height: 1.6;
 }
 
 /* //-- header, body, footer -- */
@@ -86,12 +118,14 @@ body {
     letter-spacing: 3px;
 }
 
-.subtitle {
-    font-size: 137%
+.first h2.subtitle {
+    font-size: 137%;
+    font-style: italic;
+    font-weight: normal;
 }
 
 h2 {
-    font-size: 152%
+    font-size: 160%
 }
 
 h3,
@@ -107,8 +141,8 @@ h4 {
 }
 
 p {
-    font-size: 105%;
-    line-height: 18px;
+    font-size: 112%;
+    line-height: 20px;
     padding-right: 2em;
 }
 
@@ -137,10 +171,14 @@ p.enlarge span {
 
 .contact-info {
     margin-top: 4px;
+    padding-left: 6em;
+    padding-top: 1em;
 }
 
 .first h2 {
-    font-style: italic;
+    font-style: normal;
+    font-weight: bold;
+    text-align: left;
 }
 
 .last {
@@ -154,7 +192,7 @@ p.enlarge span {
 .lev1 {
     list-style: disc inside;
     padding-top: .45em;
-    font-size: 101%;
+    font-size: 108%;
 }
 
 .lev2 {
@@ -182,7 +220,6 @@ a#pdf:hover {
     position: relative;
     margin-bottom: .5em;
     padding-bottom: 1em;
-    border-bottom: 1px solid var(--border-color);
 }
 
 .job h4 {
@@ -227,6 +264,7 @@ a#pdf:hover {
 
 .location {
     font-style: italic;
+    font-size: 115%;
     color: var(--text-color-light);
 }
 
@@ -280,8 +318,8 @@ a#pdf:hover {
 
 /* YUI Grid overrides */
 #doc2 {
-    width: 73.076em !important;  /* YUI's original width */
-    min-width: 950px !important;
+    width: 8em !important;  /* Increased width to prevent word wrapping */
+    min-width: 1060px !important;
     margin: 0 auto !important;
 }
 
