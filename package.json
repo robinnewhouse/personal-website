@@ -1,0 +1,24 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "A simple static website showcasing my professional background, projects, and resume.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinnewhouse/personal-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/robinnewhouse/personal-website/issues"
+  },
+  "homepage": "https://github.com/robinnewhouse/personal-website#readme",
+  "dependencies": {
+    "puppeteer": "^24.40.0"
+  }
+}

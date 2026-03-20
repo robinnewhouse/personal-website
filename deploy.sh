@@ -1,4 +1,9 @@
 #!/bin/bash
+set -e
+
+# Generate resume PDF
+echo "Generating resume PDF..."
+node generate-resume-pdf.js
 
 # Deploy personal website to S3
 echo "Deploying website to S3..."
