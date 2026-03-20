@@ -51,8 +51,8 @@ body {
 }
 
 .section-fullwidth {
-    margin-bottom: .5em;
-    padding: .5em 0;
+    margin-bottom: 1em;
+    padding: 1em 0;
     border-bottom: 1px solid #ccc;
 }
 
@@ -264,7 +264,7 @@ a#pdf:hover {
 
 .location {
     font-style: italic;
-    font-size: 115%;
+    font-size: 130%;
     color: var(--text-color-light);
 }
 
